@@ -1,6 +1,6 @@
 function queryStudent() {
-    var clazz = document.getElementById('classInput').value;
-    var number = document.getElementById('numberInput').value;
+    var clazz = document.getElementById('classSelect').value;
+    var number = document.getElementById('numberSelect').value;
     var resultDiv = document.getElementById('result');
 
     fetch('students.json')
