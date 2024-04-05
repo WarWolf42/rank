@@ -1,6 +1,6 @@
 function queryStudent() {
-    var clazz = document.getElementById('classSelect').value;
-    var number = document.getElementById('numberSelect').value;
+    var clazz = document.getElementById('classInput').value;
+    var number = document.getElementById('numberInput').value;
     var resultDiv = document.getElementById('result');
 
     fetch('students.json')
@@ -18,11 +18,3 @@ function queryStudent() {
             resultDiv.innerHTML = "查詢時發生錯誤，或許你可以找李得地解決這問題";
         });
 }
-document.addEventListener('DOMContentLoaded', function() {
-    var numberSelect = document.getElementById('numberSelect');
-    for (var i = 1; i <= 40; i++) {
-        var option = document.createElement('option');
-        option.value = option.textContent = i;
-        numberSelect.appendChild(option);
-    }
-});
