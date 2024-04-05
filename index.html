@@ -8,12 +8,27 @@
 </head>
 <body>
     <h1>112學年度下學期 高一修改前的段考成績</h1>
-    <p>輸入你的班級和座號來查詢資訊。</p>
-    <input type="text" id="classInput" placeholder="班級">
-    <input type="text" id="numberInput" placeholder="座號">
+    <p>選擇你的班級和座號來查詢資訊。</p>
+    
+    <label for="classSelect">班級:</label>
+    <select id="classSelect" name="class">
+        <option value="1">正</option>
+        <option value="2">心</option>
+        <option value="3">誠</option>
+        <option value="4">意</option>
+        <option value="5">修</option>
+        <option value="6">身</option>
+    </select>
+
+    <label for="numberSelect">座號:</label>
+    <select id="numberSelect" name="number">
+    
+    </select>
+
     <button onclick="queryStudent()">查詢</button>
 
     <div id="result"></div>
+
 
     <script src="script.js"></script>
 </body>
