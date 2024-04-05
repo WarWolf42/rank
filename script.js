@@ -1,4 +1,20 @@
 function queryStudent() {
+    var clazz = document.getElementById('classInput').value;
+    var number = document.getElementById('numberInput').value;
     var resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = "测试信息，如果看到这条消息，说明JavaScript正常工作。";
+
+    fetch('students.json')
+        .then(response => response.json())
+        .then(data => {
+            const student = data.find(student => student.class === clazz && student.studentNumber === number);
+            if (student) {
+                resultDiv.innerHTML = `查詢結果: 班級 ${student.class}, 座號 ${student.studentNumber}, 總分 ${student.totalScore}, 校排 ${student.schoolRank}`;
+            } else {
+                resultDiv.innerHTML = "對不起><沒有找到資料，或許檢查一下你輸入的資料是否正確";
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.innerHTML = "查詢時發生錯誤，或許你可以找李得地解決這問題";
+        });
 }
